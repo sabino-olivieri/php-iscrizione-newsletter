@@ -13,7 +13,7 @@
             <div class="row row-cols-2">
                 <div class="col-10">
                     <div class="input-group mb-3">
-                        <input type="text" name="email" class="form-control" placeholder="Inserisci la tua mail" aria-label="Inserisci la tua mail" aria-describedby="basic-addon2">
+                        <input type="text" name="email" class="form-control" placeholder="Inserisci la tua mail" aria-label="Inserisci la tua mail" aria-describedby="basic-addon2" value="<?php echo isset($_POST["email"]) ?  $_POST["email"] :  "" ?>">
                         <span class="input-group-text" id="basic-addon2">es: pippo@gmail.com</span>
                     </div>
                 </div>
