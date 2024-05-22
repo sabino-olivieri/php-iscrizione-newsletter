@@ -31,10 +31,10 @@
                     <input type="submit" class="btn btn-outline-light">
                 </div>
 
-                <?php if(isset($message) && !empty($message)) { ?>
+                <?php if(!empty($message["text"])) { ?>
                 <div class="col-12">
-                    <div class="alert alert-danger">
-                        <?php echo $message; ?>
+                    <div class="alert <?php echo $message["result"] ?>">
+                        <?php echo $message["text"]; ?>
                     </div>
                 </div>
                 <?php } ?>
