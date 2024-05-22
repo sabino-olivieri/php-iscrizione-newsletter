@@ -1,15 +1,7 @@
 <?php
+    include __DIR__ . "/partials/functions.php";
 
-
-if (isset($_POST["email"]) && $_POST["email"] !== "") {
-    if (str_contains($_POST["email"], ".") && str_contains($_POST["email"], "@")) {
-        echo "ok";
-    } else {
-        $error = "Email non valida!";
-    }
-} elseif (isset($_POST["email"]) &&  empty($_POST["email"])) {
-    $error = "La tua mail non può essere vuota!";
-}
+    $message = check_email();
 ?>
 
 
@@ -39,10 +31,10 @@ if (isset($_POST["email"]) && $_POST["email"] !== "") {
                     <input type="submit" class="btn btn-outline-light">
                 </div>
 
-                <?php if(isset($error)) { ?>
+                <?php if(isset($message) && !empty($message)) { ?>
                 <div class="col-12">
                     <div class="alert alert-danger">
-                        <?php echo $error; ?>
+                        <?php echo $message; ?>
                     </div>
                 </div>
                 <?php } ?>
