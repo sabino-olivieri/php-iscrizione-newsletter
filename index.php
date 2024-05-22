@@ -1,22 +1,13 @@
 <?php
     include __DIR__ . "/partials/functions.php";
-
+    new_session();
     $message = check_email();
+
 ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
+<?php include_once __DIR__ . "/partials/template/head.php" ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PHP Iscrizione Newsletter</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style/style.css">
-</head>
-
-<body>
     <div class="container mt-5">
         <form action="index.php" method="post">
             <div class="row row-cols-2">
@@ -41,6 +32,5 @@
             </div>
         </form>
     </div>
-</body>
 
-</html>
+<?php include_once __DIR__ . "/partials/template/footer.php" ?>

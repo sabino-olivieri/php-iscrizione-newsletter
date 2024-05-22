@@ -4,10 +4,12 @@ function check_email() {
         "text" => "",
         "result" => ""
     ];
+
     if (isset($_POST["email"]) && $_POST["email"] !== "") {
         if (str_contains($_POST["email"], ".") && str_contains($_POST["email"], "@")) {
-            $result["text"] = "Email corretta!";
-            $result["result"] = "alert-success";
+            $_SESSION["email"] = $_POST["email"];
+            $_SESSION["auth"] = true;
+            header("Location: ./thankyou.php");
         } else {
             $result["text"] = "Email non valida!";
             $result["result"] = "alert-danger";
@@ -19,4 +21,18 @@ function check_email() {
     }
 
     return $result;
+}
+
+
+function new_session() {
+    if(!isset($_SESSION)) {
+        session_start();
+    }
+
+}
+
+function check_auth() {
+    if (!isset($_SESSION["auth"]) || $_SESSION["auth"] !== true) {
+        header("Location: ./index.php");
+    }
 }
